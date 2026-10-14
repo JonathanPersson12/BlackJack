@@ -11,11 +11,14 @@ namespace BlackJack
 
             Console.WriteLine("hej");
 
-            Card myCard = new Card(25, "dam", "red", '\u2665');
-
             Deck myDeck = new Deck();
-            myDeck.orderedDeck();
-          
+
+            foreach(Card card in myDeck.CardDeck)
+            {
+                Console.WriteLine(card.CardRank + " " + card.Icon);
+            }
+
+
             
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.Design;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace BlackJack
 {
@@ -16,14 +17,16 @@ namespace BlackJack
 
         public Deck () {
             Icons = ['\u2665', '\u2666', '\u2663', '\u2660'];
+            CardDeck = new List<Card>();
 
-
+            orderedDeck();
         }
 
         public void orderedDeck()
         {
             foreach (char icon in Icons)
             {
+                
                 for (int i = 1; i <= 13; i++) {
                     int value = i;
                     string cardRank = "";
@@ -49,9 +52,17 @@ namespace BlackJack
                             break;
 
                     }
-                    char color = 'r';
+                    string color = "";
+                    if (icon == '\u2663' || icon == '\u2660')
+                    {
+                        color = "black";
+                    } else
+                    {
+                        color = "red";
+                    }
 
-                
+                    Card newCard = new Card(value, cardRank, color, icon);
+                    CardDeck.Add(newCard);
                 }
             }
         }
