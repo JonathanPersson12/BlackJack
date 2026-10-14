@@ -13,13 +13,22 @@ namespace BlackJack
 
             Deck myDeck = new Deck();
 
+            /*
             foreach(Card card in myDeck.CardDeck)
             {
                 Console.WriteLine(card.CardRank + " " + card.Icon);
             }
+            */
+
+            foreach (Card card in myDeck.MixedCardDeck)
+            {
+                Console.WriteLine(card.CardRank + " " + card.Icon);
+            }
+
+            Console.WriteLine(myDeck.MixedCardDeck.Count);
 
 
-            
+
         }
     }
 }

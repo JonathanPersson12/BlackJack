@@ -18,8 +18,10 @@ namespace BlackJack
         public Deck () {
             Icons = ['\u2665', '\u2666', '\u2663', '\u2660'];
             CardDeck = new List<Card>();
+            MixedCardDeck = new List<Card>();
 
             orderedDeck();
+            mixedDeck();
         }
 
         public void orderedDeck()
@@ -34,6 +36,7 @@ namespace BlackJack
                     {
                         case 1:  
                             cardRank = "A";
+                            value = 11;
                             break;
                         case 11:
                             cardRank = "J";
@@ -65,6 +68,30 @@ namespace BlackJack
                     CardDeck.Add(newCard);
                 }
             }
+        }
+
+        public void mixedDeck()
+        {
+            Random random = new Random();
+
+            List<int> numbers = new List<int>();
+
+
+            while (numbers.Count < 52)
+            {
+                int number = random.Next(0, 52);
+
+                if (!numbers.Contains(number))
+                {
+                    numbers.Add(number);
+                }
+            }
+
+            for (int i = 0; i < CardDeck.Count; i++) {
+                MixedCardDeck.Add(CardDeck[numbers[i]]);
+            }
+
+            
         }
     }
 }
