@@ -26,12 +26,12 @@ namespace BlackJack
             MixedCardDeck = new List<Card>();
 
             // Create the deck first, then shuffle it
-            orderedDeck();
-            mixedDeck();
+            OrderedDeck();
+            MixedDeck();
         }
 
         // Method for creating a complete deck containing 52 cards
-        public void orderedDeck()
+        public void OrderedDeck()
         {
             foreach (char icon in Icons)
             {
@@ -80,7 +80,7 @@ namespace BlackJack
         }
 
         // Method to create a shuffled card order based on CardDeck and stores it in MixedCardDeck
-        public void mixedDeck()
+        public void MixedDeck()
         {
             Random random = new Random();
 
@@ -104,6 +104,16 @@ namespace BlackJack
 
             
         }
+
+        // 
+        public Card DrawCard()
+        {
+            Card currentCard = MixedCardDeck[0];
+            MixedCardDeck.RemoveAt(0);
+            return currentCard;
+        }
+
+
 
     }
 }
