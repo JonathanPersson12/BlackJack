@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BlackJack
 {
-    internal class Player
+    internal class Player : Person
     {
     }
 }
