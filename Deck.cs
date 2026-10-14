@@ -11,6 +11,12 @@ namespace BlackJack
 
         public List<Card> MixedCardDeck { get; set; } 
 
-        public string[] Icons { get; set; }
+        public char[] Icons { get; set; }
+
+        public Deck () {
+            Icons = ['\u2665', '\u2666', '\u2663', '\u2660'];
+
+
+        }
     }
 }

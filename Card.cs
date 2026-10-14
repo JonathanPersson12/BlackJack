@@ -9,8 +9,8 @@ namespace BlackJack
         public int Value { get; set; }
         public string CardRank { get; set; }
         public string Color { get; set; }
-        public string Icon { get; set; }
-        public Card(int value, string cardRank, string color, string icon)
+        public char Icon { get; set; }
+        public Card(int value, string cardRank, string color, char icon)
         {
             Value = value;
             CardRank = cardRank;

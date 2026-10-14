@@ -6,11 +6,18 @@ namespace BlackJack
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
             Console.WriteLine("hej");
 
-            Card myCard = new Card(25, "dam", "red", "u2665");
+            Card myCard = new Card(25, "dam", "red", '\u2665');
 
-            Console.WriteLine(myCard.Value + myCard.CardRank + myCard.Color + myCard.Icon);
+          
+            Console.Write($"{myCard.Value} {myCard.CardRank} {myCard.Color} ");
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write($" {myCard.Icon} {myCard.CardRank} ");
+            Console.ResetColor();
         }
     }
 }
