@@ -15,10 +15,11 @@ namespace BlackJack
         public List<Card> MixedCardDeck { get; set; }
         // Contains the card symbols ♥ - ♦ - ♠ - ♣
         public char[] Icons { get; set; }
-        /*
-        Constructor initializes the Icons array with symbols and uses methods to
-        fill the ordered deck and, based on that, create a shuffled deck
-        */
+       
+
+        /// <summary>
+        /// Creates a complete deck of 52 cards and stores an ordered deck of cards in CardDeck and a shuffled version of the cards in MixedCardDeck
+        /// </summary>
         public Deck () {
             // Hearts, diamonds, clubs and spades.
             Icons = ['\u2665', '\u2666', '\u2663', '\u2660'];
@@ -105,7 +106,12 @@ namespace BlackJack
             
         }
 
-        // 
+        /// <summary>
+        /// Draw card method delivers card on index 0 from MixedDeck list and removes it from deck
+        /// </summary>
+        /// <returns>
+        /// A Card object containing CardRank, Icon, Value and Color
+        /// </returns>
         public Card DrawCard()
         {
             Card currentCard = MixedCardDeck[0];
