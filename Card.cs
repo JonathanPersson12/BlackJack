@@ -6,11 +6,11 @@ namespace BlackJack
 {
     internal class Card
     {
-        int Value { get; set; }
-        string CardRank { get; set; }
-        string Color { get; set; }
-        string Icon { get; set; }
-        public Card(int value, string cardRank, string color, string icon)
+        public int Value { get; set; }
+        public string CardRank { get; set; }
+        public string Color { get; set; }
+        public char Icon { get; set; }
+        public Card(int value, string cardRank, string color, char icon)
         {
             Value = value;
             CardRank = cardRank;
