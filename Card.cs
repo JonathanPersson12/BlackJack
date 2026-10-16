@@ -17,6 +17,79 @@ namespace BlackJack
             Color = color;
             Icon = icon;
         }
+        
+        public override string ToString()
+        {
+            return $"{Icon}{CardRank}";
+        }
+        
+        public void VisualizeCard(Card card)
+        {
+           
+            if (card.CardRank == "10")
+            {
+                card.CardRank = $"{card.CardRank}";
+            } else
+            {
+                card.CardRank = $" {card.CardRank}";
+            }
 
+            if (card.Color == "red")
+            {
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write($"{card.CardRank}     ");
+                Console.ResetColor();
+                Console.WriteLine();
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write($"       ");
+                Console.ResetColor();
+                Console.WriteLine();
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write($"   {card.Icon}   ");
+                Console.ResetColor();
+                Console.WriteLine();
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write($"       ");
+                Console.ResetColor();
+                Console.WriteLine();
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write($"    {card.CardRank} ");
+                Console.ResetColor();
+                Console.WriteLine();
+            } else
+            {
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.Write($"{card.CardRank}     ");
+                Console.ResetColor();
+                Console.WriteLine();
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.Write($"       ");
+                Console.ResetColor();
+                Console.WriteLine();
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.Write($"   {card.Icon}   ");
+                Console.ResetColor();
+                Console.WriteLine();
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.Write($"       ");
+                Console.ResetColor();
+                Console.WriteLine();
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.Write($"    {card.CardRank} ");
+                Console.ResetColor();
+                Console.WriteLine();
+
+            }
+        }
     }
 }
