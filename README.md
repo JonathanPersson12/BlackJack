@@ -55,10 +55,14 @@ Vi har också fått bättre förståelse för hur olika klasser kan samarbeta i 
 
 ## Vad har varit svårt?
 
-En av de svåraste delarna har varit att förstå hur alla klasser och metoder ska kopplas ihop till ett fungerande spel.
+En av de svåraste delarna har varit att förstå hur alla klasser och metoder ska kopplas ihop till ett fungerande spel. 
+
+Vissa delar av spellogiken har också varit utmanande, som att ess kan motsvara både ett och elva poäng. 
 
 Git och GitHub var också ganska nytt för oss i början, så vi fick hjälpas åt att förstå hur det fungerar och hur man arbetade med det.
 
 ## Vad skulle vi förbättra om vi hade mer tid?
 
 Om vi hade mer tid skulle vi vilja förbättra hur korten visas i konsolen och kanske testa att göra ett grafiskt gränssnitt med MAUI.
+
+Eventuellt hade vi också lagt till fler features som highscore-board och virtuella penga-instatser om tiden hade tillåtit. 
