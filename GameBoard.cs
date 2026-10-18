@@ -75,6 +75,7 @@ namespace BlackJack
                     Console.ResetColor();
                     Console.WriteLine();
                     PlayAgain();
+                    return;
                 }
 
                 Console.Write("\nDo you want to (H)it or (S)tand? ");
