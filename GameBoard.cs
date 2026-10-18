@@ -125,7 +125,7 @@ namespace BlackJack
             }
 
             // Dealer choice to stand if hand value is above 17
-            if (!dealer.ShouldHit())
+            if (!dealer.ShouldHit() && dealer.CountValue() <= 21)
             {
                 Console.WriteLine("Dealer stand...");
                 Thread.Sleep(1000);
