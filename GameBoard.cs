@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Channels;
-
-namespace BlackJack
+﻿namespace BlackJack
 {
     internal class GameBoard
     {
@@ -42,12 +37,7 @@ namespace BlackJack
                 Console.WriteLine($"Dealer's hand:");
                 Console.ResetColor();
                 Console.WriteLine();
-                //foreach (Card card in dealer.GetHand())
-                //{
-                //    CardPrinter.PrintCard(card);
-                //    Console.WriteLine();
-                //}
-                //Console.WriteLine($"Dealer total: {dealer.CountValue()}");
+
                 Card firstCard = dealer.GetHand()[0];
                 CardPrinter.PrintCard(firstCard);
                 Console.WriteLine();
@@ -57,7 +47,7 @@ namespace BlackJack
                 Console.WriteLine("==================");
                 Console.WriteLine();
 
-                // Display players´s cards and total points
+                // Shows only the dealer's first card and hides the second card
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("Your hand:");
                 Console.ResetColor();
@@ -67,7 +57,7 @@ namespace BlackJack
                     CardPrinter.PrintCard(card);
                     Console.WriteLine();
                 }
-                Console.WriteLine($"Yoar total: {player.CountValue()}");
+                Console.WriteLine($"Your total: {player.CountValue()}");
 
 
                 // If the player goes over 21, they lose immediately (Bust)
@@ -147,6 +137,7 @@ namespace BlackJack
             foreach (Card card in dealer.GetHand())
             {
                 CardPrinter.PrintCard(card);
+                Console.WriteLine();
             }
             Console.WriteLine($"Dealer total: {dealer.CountValue()}");
 
@@ -154,6 +145,7 @@ namespace BlackJack
             foreach (Card card in player.GetHand())
             {
                 CardPrinter.PrintCard(card);
+                Console.WriteLine();
             }
             Console.WriteLine($"Your total: {player.CountValue()}");
             Console.WriteLine();
