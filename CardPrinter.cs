@@ -21,9 +21,21 @@
             // Prints the card using the ToString() method in Card.
             Console.Write($"   {card}   ");
 
+            Console.WriteLine();
+
             // Resets the console colors after printing the card.
             Console.ResetColor();
+        }
 
+        // Prints the back of a hidden card
+        public static void PrintHiddenCard()
+        {
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
+
+            Console.Write("   ??    ");
+
+            Console.ResetColor();
             Console.WriteLine();
         }
     }

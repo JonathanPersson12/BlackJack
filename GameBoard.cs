@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Channels;
-
-namespace BlackJack
+﻿namespace BlackJack
 {
     internal class GameBoard
     {
@@ -42,18 +37,17 @@ namespace BlackJack
                 Console.WriteLine($"Dealer's hand:");
                 Console.ResetColor();
                 Console.WriteLine();
-                foreach (Card card in dealer.GetHand())
-                {
-                    CardPrinter.PrintCard(card);
-                    Console.WriteLine();
-                }
-                Console.WriteLine($"Dealer total: {dealer.CountValue()}");
+
+                Card firstCard = dealer.GetHand()[0];
+                CardPrinter.PrintCard(firstCard);
+                Console.WriteLine();
+                CardPrinter.PrintHiddenCard();
 
                 Console.WriteLine();
                 Console.WriteLine("==================");
                 Console.WriteLine();
 
-                // Display players´s cards and total points
+                // Shows only the dealer's first card and hides the second card
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("Your hand:");
                 Console.ResetColor();
@@ -63,7 +57,7 @@ namespace BlackJack
                     CardPrinter.PrintCard(card);
                     Console.WriteLine();
                 }
-                Console.WriteLine($"Yoar total: {player.CountValue()}");
+                Console.WriteLine($"Your total: {player.CountValue()}");
 
 
                 // If the player goes over 21, they lose immediately (Bust)
@@ -139,8 +133,21 @@ namespace BlackJack
             Console.WriteLine("=== FINAL RESULT ===");
             Console.WriteLine();
             Console.ResetColor();
-            Console.Write($"Dealer's hand: {dealer.CountValue()}. ");
-            Console.Write($"Your hand: {player.CountValue()}");
+            Console.WriteLine("Dealer's hand:");
+            foreach (Card card in dealer.GetHand())
+            {
+                CardPrinter.PrintCard(card);
+                Console.WriteLine();
+            }
+            Console.WriteLine($"Dealer total: {dealer.CountValue()}");
+
+            Console.WriteLine("\nYour hand:");
+            foreach (Card card in player.GetHand())
+            {
+                CardPrinter.PrintCard(card);
+                Console.WriteLine();
+            }
+            Console.WriteLine($"Your total: {player.CountValue()}");
             Console.WriteLine();
 
             Thread.Sleep(1000);
@@ -155,13 +162,13 @@ namespace BlackJack
             if (dealerPoints > 21)
             {
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.WriteLine("\nDealer went bust! You win! 🎉");
+                Console.WriteLine("\nDealer went bust! You win!");
                 Console.ResetColor();
             }
             else if (playerPoints > dealerPoints)
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("\nYou have the better hand. You win! 🏆");
+                Console.WriteLine("\nYou have the better hand. You win!");
                 Console.ResetColor();
             }
             else if (dealerPoints > playerPoints)
