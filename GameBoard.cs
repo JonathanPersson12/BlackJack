@@ -128,6 +128,7 @@ namespace BlackJack
             if (!dealer.ShouldHit())
             {
                 Console.WriteLine("Dealer stand...");
+                Thread.Sleep(1000);
             }
 
             
@@ -207,7 +208,6 @@ namespace BlackJack
                 else
                 {
                     Console.WriteLine("Invalid answear, try again");
-                    choice = Console.ReadLine().ToUpper();
                 }
             }
         }
